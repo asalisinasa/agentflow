@@ -11,7 +11,9 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
@@ -21,7 +23,8 @@
   },
   "dependencies": {
     "@agentsdk/core": "workspace:*",
-    "ai": "^4.0.0"
+    "ai": "^4.0.0",
+    "zod": "^3.25.76"
   },
   "peerDependencies": {
     "@ai-sdk/anthropic": ">=1.0.0",
@@ -29,9 +32,15 @@
     "@ai-sdk/openai": ">=1.0.0"
   },
   "peerDependenciesMeta": {
-    "@ai-sdk/openai": { "optional": true },
-    "@ai-sdk/anthropic": { "optional": true },
-    "@ai-sdk/google": { "optional": true }
+    "@ai-sdk/openai": {
+      "optional": true
+    },
+    "@ai-sdk/anthropic": {
+      "optional": true
+    },
+    "@ai-sdk/google": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@agentsdk/core": "workspace:*",
