@@ -1,0 +1,39 @@
+{
+  "name": "@agentsdk/next",
+  "version": "0.1.0",
+  "description": "Next.js integration for @agentsdk/core — createAgentRoute, SSE streaming, auth middleware",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@agentsdk/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "next": ">=15.0.0"
+  },
+  "devDependencies": {
+    "@agentsdk/core": "workspace:*",
+    "next": "^16.2.1",
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

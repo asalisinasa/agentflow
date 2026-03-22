@@ -1,4 +1,4 @@
-import { describe, expect, it, vi, beforeEach } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import { SupermemoryStore } from "../src/index.js";
 
 // ─── Mock Supermemory SDK ─────────────────────────────────────────────────────
@@ -18,7 +18,7 @@ vi.mock("supermemory", () => ({
       list: mockList,
     },
     search: {
-      documents: mockSearch,
+      memories: mockSearch,
     },
   })),
 }));
@@ -81,8 +81,8 @@ describe("SupermemoryStore", () => {
     it("returns mapped MemoryEntry array", async () => {
       mockSearch.mockResolvedValue({
         results: [
-          { id: "r1", content: "TypeScript tips", createdAt: "2025-01-01T00:00:00Z" },
-          { id: "r2", content: "TypeScript tricks", createdAt: "2025-01-02T00:00:00Z" },
+          { id: "r1", memory: "TypeScript tips", updatedAt: "2025-01-01T00:00:00Z" },
+          { id: "r2", memory: "TypeScript tricks", updatedAt: "2025-01-02T00:00:00Z" },
         ],
       });
 

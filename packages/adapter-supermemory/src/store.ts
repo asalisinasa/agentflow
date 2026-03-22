@@ -93,19 +93,19 @@ export class SupermemoryStore implements MemoryStore {
    * Search memories by semantic similarity.
    */
   async search(query: string, limit?: number): Promise<MemoryEntry[]> {
-    const response = await this.client.search.documents({
+    const response = await this.client.search.memories({
       q: query,
       limit: limit ?? this.defaultSearchLimit,
-      ...(this.containerTag !== undefined && { containerTags: [this.containerTag] }),
+      ...(this.containerTag !== undefined && { containerTag: this.containerTag }),
     });
 
     const results = response.results ?? [];
 
     return results.map((r) => ({
       id: r.id ?? generateFallbackId(),
-      content: r.content ?? "",
+      content: r.memory ?? "",
       metadata: r.metadata as Record<string, unknown> | undefined,
-      createdAt: r.createdAt ? new Date(r.createdAt) : new Date(),
+      createdAt: new Date(r.updatedAt),
     }));
   }
 
