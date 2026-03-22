@@ -51,6 +51,10 @@ export { TaskQueue, TaskRouter } from "./tasks/task-queue.js";
 // Memory
 export { InMemoryStore } from "./memory/in-memory-store.js";
 
+// Planning
+export { LLMPlanner } from "./planning/llm-planner.js";
+export type { LLMPlannerConfig } from "./planning/llm-planner.js";
+
 // Tools
 export { defineTool } from "./memory/in-memory-store.js";
 export type { ToolBuilderConfig } from "./memory/in-memory-store.js";
