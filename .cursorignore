@@ -1,0 +1,13 @@
+# Dependencies & build
+node_modules
+dist
+.turbo
+.next
+.pnpm-store
+*.tsbuildinfo
+
+# Secrets — any depth (monorepo apps)
+.env
+.env.*
+**/.env
+**/.env.*
