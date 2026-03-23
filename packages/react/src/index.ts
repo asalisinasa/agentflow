@@ -22,3 +22,7 @@ export type { ChatUIProps } from "./chat-ui.js";
 
 // assistant-ui adapter
 export { createAssistantUIAdapter } from "./assistant-ui-adapter.js";
+
+// Approval
+export { ApprovalGate, useApproval } from "./approval.js";
+export type { ApprovalGateProps, PendingApproval, UseApprovalReturn } from "./approval.js";
