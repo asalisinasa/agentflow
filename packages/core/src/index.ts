@@ -61,3 +61,12 @@ export type { ToolBuilderConfig } from "./memory/in-memory-store.js";
 
 // Utils
 export { generateId } from "./utils.js";
+
+// Human-in-the-loop
+export { InMemoryApprovalStore, requiresApprovalRule } from "./hitl/approval.js";
+export type {
+  ApprovalRequest,
+  ApprovalResult,
+  ApprovalStore,
+  RequiresApprovalConfig,
+} from "./hitl/approval.js";
